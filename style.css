@@ -1,0 +1,208 @@
+@font-face {
+  font-family: "HankenGrotesk";
+  src: url("/assets/fonts/HankenGrotesk-VariableFont_wght.ttf")
+    format("truetype");
+  font-display: swap;
+  font-weight: 100 900;
+}
+:root {
+  --light-state-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --bg-light-red: hsla(0, 100%, 67%, 0.1);
+  --bg-orangey-yellow: hsla(39, 100%, 56%, 0.1);
+  --bg-green-teal: hsla(166, 100%, 37%, 0.1);
+  --bg-cobalt-blue: hsla(234, 85%, 45%, 0.1);
+}
+:root {
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+}
+
+* {
+  margin: 0;
+  font: inherit;
+  box-sizing: border-box;
+  font-family: HankenGrotesk;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+.result-summary {
+  width: 736px;
+  height: 512px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 1rem 2rem 1rem var(--pale-blue);
+}
+.results .section-title {
+  color: var(--light-lavender);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.result-score {
+  background: linear-gradient(var(--violet-blue), var(--persian-blue));
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  color: var(--light-lavender);
+}
+.result-score span {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--white);
+}
+.results {
+  width: 368px;
+  height: inherit;
+  background: linear-gradient(
+    245deg,
+    var(--light-state-blue),
+    var(--light-royal-blue)
+  );
+  border-radius: 30px;
+}
+.grid-flow {
+  display: grid;
+  gap: 1rem;
+}
+.results.grid-flow {
+  padding: 3.5rem;
+}
+.result-rank {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.result-description {
+  color: var(--light-lavender);
+  /* flex-wrap: wrap; */
+  width: 260px;
+  margin: auto;
+  /* padding-inline: 1rem; */
+}
+.summary {
+  height: inherit;
+  padding: 2.5rem;
+}
+.section-title {
+  color: var(--dark-gray-blue);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.summary-item {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  height: 56px;
+  width: 288px;
+}
+.summary-score {
+  color: var(--dark-gray-blue);
+  font-size: 1.125rem;
+}
+.summary-score > span {
+  font-weight: 700;
+}
+.flex-group {
+  display: flex;
+  gap: 1rem;
+}
+.summary-item:nth-child(1) {
+  background-color: var(--bg-light-red);
+  color: var(--light-red);
+}
+.summary-item:nth-child(2) {
+  background-color: var(--bg-orangey-yellow);
+  color: var(--orangey-yellow);
+}
+.summary-item:nth-child(3) {
+  background-color: var(--bg-green-teal);
+  color: var(--green-teal);
+}
+.summary-item:last-child {
+  background-color: var(--bg-cobalt-blue);
+  color: var(--cobalt-blue);
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  border-radius: 30px;
+  width: 100%;
+  height: 56px;
+  font-size: 1.125rem;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(var(--light-state-blue), var(--light-royal-blue));
+}
+
+/* - phone:480px 30rem */
+@media (max-width: 32rem) {
+  .result-summary {
+    width: 375px;
+    height: 809px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    border-radius: none;
+    box-shadow: none;
+  }
+  .results {
+    width: 375px;
+    height: 356px;
+    border-radius: 0 0 30px 30px;
+  }
+  .result-score {
+    height: 140px;
+    width: 140px;
+  }
+  .results.grid-flow {
+    padding: 2rem;
+  }
+  .summary {
+    height: 453px;
+    width: 375px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .summary-item {
+    border-radius: 10px;
+    height: 56px;
+    width: 100%;
+  }
+}
